@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Comissionamento - SPDATA / 2026</title>
+    <title>Modelo de Comissionamento - SPDATA</title>
     <style>
         :root {
             --primary: #0056b3;
@@ -88,6 +88,14 @@
             margin: 1.5rem 0;
         }
         
+        .protection-box {
+            background-color: rgba(40, 167, 69, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
         .model-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -158,6 +166,46 @@
             left: 0;
         }
         
+        .payment-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .payment-step {
+            text-align: center;
+            flex: 1;
+            padding: 1rem;
+            position: relative;
+        }
+        
+        .payment-step:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--primary);
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        
         footer {
             background-color: var(--dark);
             color: white;
@@ -194,6 +242,14 @@
             .model-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .payment-steps {
+                flex-direction: column;
+            }
+            
+            .payment-step:not(:last-child):after {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -202,7 +258,7 @@
         <div class="container">
             <!-- Substitua pela logo real da SPDATA -->
             <div class="logo">SPDATA</div>
-            <h1>Modelo de Comissionamento para Gerentes Comerciais 2026</h1>
+            <h1>Modelo de Comissionamento para Gerentes Comerciais</h1>
             <p class="subtitle">Proposta competitiva e alinhada com o mercado de software hospitalar</p>
         </div>
     </header>
@@ -238,7 +294,7 @@
                     <h3>Aceleração</h3>
                     <div class="percentage">10%</div>
                     <p>sobre todos os contratos fechados após o atingimento da meta do período.</p>
-                    <p>Incentiva o gerente a não parar após bater a meta.</p>
+                    <p>Impulsiona o gerente a buscar sempre além da meta.</p>
                 </div>
                 
                 <div class="model-card">
@@ -277,9 +333,34 @@
                 </tbody>
             </table>
             
-            <h3>Regra de Pagamento</h3>
-            <p><strong>100% da comissão paga na assinatura do contrato</strong></p>
-            <p>Alternativa: 50% na assinatura e 50% após o go-live (se a empresa preferir segurança) - (Obs: Hoje o mercado geralmente paga na assinatura..)</p>
+            <h3>Regra de Pagamento - Parcelado em 3x</h3>
+            <div class="payment-steps">
+                <div class="payment-step">
+                    <div class="step-number">1</div>
+                    <h4>1ª Parcela</h4>
+                    <p>Início do trimestre seguinte</p>
+                    <p>33% do valor da comissão</p>
+                </div>
+                <div class="payment-step">
+                    <div class="step-number">2</div>
+                    <h4>2ª Parcela</h4>
+                    <p>30 dias após</p>
+                    <p>33% do valor da comissão</p>
+                </div>
+                <div class="payment-step">
+                    <div class="step-number">3</div>
+                    <h4>3ª Parcela</h4>
+                    <p>60 dias após</p>
+                    <p>34% do valor da comissão</p>
+                </div>
+            </div>
+            
+            <div class="protection-box">
+                <h4>Proteção contra Cancelamentos</h4>
+                <p><strong>Em caso de cancelamento de contrato após início da implantação:</strong></p>
+                <p>O gerente comercial não será impactado, pois a responsabilidade pela implantação já não está mais sob sua gestão.</p>
+                <p><strong>Exceção:</strong> Cancelamentos decorrentes de falhas na negociação identificadas como responsabilidade do gerente comercial.</p>
+            </div>
         </section>
         
         <section id="beneficios">
@@ -291,6 +372,8 @@
                 <li>Alinha o gerente comercial ao crescimento anual</li>
                 <li>Competitivo com práticas de mercado do setor hospitalar</li>
                 <li>Estimula vendas de contratos de maior valor</li>
+                <li>Proteção financeira contra cancelamentos pós-implantação</li>
+                <li>Pagamento parcelado permite melhor gestão do fluxo de caixa</li>
             </ul>
         </section>
         
