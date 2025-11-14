@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Comissionamento - SPDATA - 2026</title>
+    <title>Modelo de Comissionamento - SPDATA</title>
     <style>
         :root {
             --primary: #0056b3;
@@ -96,6 +96,14 @@
             border-radius: 4px;
         }
         
+        .minimum-sales {
+            background-color: rgba(0, 86, 179, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
         .model-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -109,10 +117,34 @@
             padding: 1.5rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .model-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .model-card.featured:before {
+            content: "⭐ DESTAQUE";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
         
         .model-card:hover {
             transform: translateY(-5px);
+        }
+        
+        .model-card.featured:hover {
+            transform: translateY(-5px) scale(1.05);
         }
         
         .model-card h3 {
@@ -243,6 +275,14 @@
                 grid-template-columns: 1fr;
             }
             
+            .model-card.featured {
+                transform: none;
+            }
+            
+            .model-card.featured:hover {
+                transform: translateY(-5px);
+            }
+            
             .payment-steps {
                 flex-direction: column;
             }
@@ -258,7 +298,7 @@
         <div class="container">
             <!-- Substitua pela logo real da SPDATA -->
             <div class="logo">SPDATA</div>
-            <h1>Modelo de Comissionamento para Gerentes Comerciais - 2026</h1>
+            <h1>Modelo de Comissionamento para Gerentes Comerciais</h1>
             <p class="subtitle">Proposta competitiva e alinhada com o mercado de software hospitalar</p>
         </div>
     </header>
@@ -282,19 +322,26 @@
         <section id="modelo-proposto">
             <h2>Modelo Proposto (2026)</h2>
             
+            <div class="minimum-sales">
+                <h3>🏆 Meta Mínima para Pagamento</h3>
+                <p><strong>R$ 50.000 em vendas por trimestre</strong></p>
+                <p>O pagamento da comissão será realizado apenas após o atingimento desta meta mínima trimestral.</p>
+                <p>Valores abaixo de R$ 50.000 em vendas no trimestre não geram direito a comissão.</p>
+            </div>
+            
             <div class="model-grid">
                 <div class="model-card">
                     <h3>Comissão Base</h3>
                     <div class="percentage">5%</div>
                     <p>sobre o valor total do contrato fechado até o atingimento da meta trimestral.</p>
-                    <p>Aplica-se a contratos entre R$ 50 mil e R$ 800 mil.</p>
+                    <p><strong>Aplica-se apenas após atingir R$ 50.000 em vendas.</strong></p>
                 </div>
                 
-                <div class="model-card">
+                <div class="model-card featured">
                     <h3>Aceleração</h3>
                     <div class="percentage">10%</div>
                     <p>sobre todos os contratos fechados após o atingimento da meta do período.</p>
-                    <p>Impulsiona o gerente a buscar sempre além da meta.</p>
+                    <p><strong>Impulsiona o gerente a buscar sempre além da meta mínima.</strong></p>
                 </div>
                 
                 <div class="model-card">
@@ -374,6 +421,8 @@
                 <li>Estimula vendas de contratos de maior valor</li>
                 <li>Proteção financeira contra cancelamentos pós-implantação</li>
                 <li>Pagamento parcelado permite melhor gestão do fluxo de caixa</li>
+                <li>Meta mínima garante rentabilidade nas operações comerciais</li>
+                <li>Incentivo claro para superação de resultados básicos</li>
             </ul>
         </section>
         
@@ -383,7 +432,7 @@
             
             <h3>Comissão do Gerente Comercial</h3>
             <p>3% a 6% sobre contratos até o atingimento da meta mensal/trimestral</p>
-            <p>6% a 12% após o atingimento da meta (aceleração / overachievement)</p>
+            <p>6% a 10% após o atingimento da meta (aceleração / overachievement)</p>
             
             <h3>Super Metas</h3>
             <p>É padrão oferecer bônus fixo quando o gerente ultrapassa a meta anual/trimestral:</p>
@@ -395,6 +444,9 @@
             
             <h3>Tipo de Comissionamento</h3>
             <p>Comissão % sobre valor do contrato (TVC – total value contract), não sobre MRR como no SaaS puro, devido às vendas hospitalares serem projetos grandes com implantação longa.</p>
+            
+            <h3>Meta Mínima</h3>
+            <p>É prática comum no setor estabelecer metas mínimas para início do pagamento de comissões, garantindo que apenas resultados significativos sejam remunerados.</p>
         </section>
         
         <section id="cta" style="text-align: center;">
@@ -412,4 +464,3 @@
     </footer>
 </body>
 </html>
-
