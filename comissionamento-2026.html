@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Comissionamento - SPDATA / 2026</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #28a745;
+            --accent: #ffc107;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #003d82);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 193, 7, 0.2);
+            padding: 1rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0;
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .model-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .model-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .percentage {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 1rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+        }
+        
+        .benefits-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Substitua pela logo real da SPDATA -->
+            <div class="logo">SPDATA</div>
+            <h1>Modelo de Comissionamento para Gerentes Comerciais 2026</h1>
+            <p class="subtitle">Proposta competitiva e alinhada com o mercado de software hospitalar</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <p>Este documento apresenta uma proposta de modelo de remuneração variável competitivo para Gerentes Comerciais da SPDATA, especificamente desenvolvido para o setor de gestão hospitalar.</p>
+            <p>O modelo foi estruturado com base nas práticas de mercado das principais empresas do segmento (MV, Philips, TOTVS, T-Systems, Shift, Pixeon, etc.) e considera as particularidades do ciclo de vendas consultivo do software hospitalar.</p>
+        </section>
+        
+        <section id="objetivo">
+            <h2>Objetivo</h2>
+            <p>Criar um modelo de remuneração variável competitivo com o mercado de software hospitalar, estimulando alta performance, acelerando conversões e reduzindo churn de vendas complexas.</p>
+            
+            <div class="highlight">
+                <p><strong>Justificativa:</strong> O setor hospitalar possui ciclo de venda consultivo, elevado número de horas em demonstrações, pré-análise, levantamento de requisitos e tratativas com TI e diretoria. Empresas concorrentes utilizam aceleração de comissão para manter gerentes altamente engajados.</p>
+            </div>
+        </section>
+        
+        <section id="modelo-proposto">
+            <h2>Modelo Proposto (2026)</h2>
+            
+            <div class="model-grid">
+                <div class="model-card">
+                    <h3>Comissão Base</h3>
+                    <div class="percentage">5%</div>
+                    <p>sobre o valor total do contrato fechado até o atingimento da meta trimestral.</p>
+                    <p>Aplica-se a contratos entre R$ 50 mil e R$ 800 mil.</p>
+                </div>
+                
+                <div class="model-card">
+                    <h3>Aceleração</h3>
+                    <div class="percentage">10%</div>
+                    <p>sobre todos os contratos fechados após o atingimento da meta do período.</p>
+                    <p>Incentiva o gerente a não parar após bater a meta.</p>
+                </div>
+                
+                <div class="model-card">
+                    <h3>Contratos Enterprise</h3>
+                    <div class="percentage">+2%</div>
+                    <p>adicional para contratos acima de R$ 600 mil.</p>
+                    <p>Reconhecimento pela complexidade de vendas de alto valor.</p>
+                </div>
+            </div>
+            
+            <h3>Bônus por Supermeta</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>% da Meta</th>
+                        <th>Bônus</th>
+                        <th>Justificativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>110%</td>
+                        <td>0,5× salário</td>
+                        <td>Estimular primeiro teto</td>
+                    </tr>
+                    <tr>
+                        <td>120%</td>
+                        <td>1× salário</td>
+                        <td>Alta performance anual</td>
+                    </tr>
+                    <tr>
+                        <td>140%</td>
+                        <td>1,5× salário</td>
+                        <td>Ultra performance</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Regra de Pagamento</h3>
+            <p><strong>100% da comissão paga na assinatura do contrato</strong></p>
+            <p>Alternativa: 50% na assinatura e 50% após o go-live (se a empresa preferir segurança).</p>
+        </section>
+        
+        <section id="beneficios">
+            <h2>Benefícios do Modelo</h2>
+            <ul class="benefits-list">
+                <li>Aumenta previsibilidade de receita</li>
+                <li>Melhora motivação e foco do time comercial</li>
+                <li>Retém talentos</li>
+                <li>Alinha o gerente comercial ao crescimento anual</li>
+                <li>Competitivo com práticas de mercado do setor hospitalar</li>
+                <li>Estimula vendas de contratos de maior valor</li>
+            </ul>
+        </section>
+        
+        <section id="praticas-mercado">
+            <h2>Práticas de Mercado em Software Hospitalar</h2>
+            <p>O modelo proposto está alinhado com as práticas mais comuns no setor de software hospitalar:</p>
+            
+            <h3>Comissão do Gerente Comercial</h3>
+            <p>3% a 6% sobre contratos até o atingimento da meta mensal/trimestral</p>
+            <p>6% a 12% após o atingimento da meta (aceleração / overachievement)</p>
+            
+            <h3>Super Metas</h3>
+            <p>É padrão oferecer bônus fixo quando o gerente ultrapassa a meta anual/trimestral:</p>
+            <ul>
+                <li>Supermeta 110% → bônus de 0,5× salário</li>
+                <li>Supermeta 120% → bônus de 1× salário</li>
+                <li>Supermeta 140% ou 150% → bônus de 1,5× salário</li>
+            </ul>
+            
+            <h3>Tipo de Comissionamento</h3>
+            <p>Comissão % sobre valor do contrato (TVC – total value contract), não sobre MRR como no SaaS puro, devido às vendas hospitalares serem projetos grandes com implantação longa.</p>
+        </section>
+        
+        <section id="cta" style="text-align: center;">
+            <h2>Próximos Passos</h2>
+            <p>Esta proposta está disponível para discussão e ajustes conforme necessário.</p>
+            <a href="#" class="cta-button">Agendar Reunião de Discussão</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>SPDATA &copy; 2025 - Proposta de Modelo de Comissionamento</p>
+            <p>Documento interno - Confidencial</p>
+        </div>
+    </footer>
+</body>
+</html>
