@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Comissionamento - SPDATA</title>
+    <title>Modelo de Incentivo Comercial 2026 - SPDATA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0056b3;
-            --secondary: #28a745;
-            --accent: #ffc107;
+            --primary: #1a73e8;
+            --secondary: #34a853;
+            --accent: #fbbc05;
+            --dark: #202124;
             --light: #f8f9fa;
-            --dark: #343a40;
-            --gray: #6c757d;
+            --gray: #5f6368;
         }
         
         * {
@@ -22,244 +23,226 @@
         }
         
         body {
-            background-color: #f5f5f5;
+            background-color: #f5f7fa;
             color: var(--dark);
             line-height: 1.6;
         }
         
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), #003d82);
+            background: linear-gradient(135deg, var(--primary), #0056b3);
             color: white;
-            padding: 2rem 0;
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            max-width: 200px;
-            margin-bottom: 1rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
         
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
         
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        section {
+        .card {
             background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        h2 {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        h3 {
-            color: var(--secondary);
-            margin: 1.5rem 0 1rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
+        .card-title i {
+            color: var(--accent);
         }
         
         .highlight {
-            background-color: rgba(255, 193, 7, 0.2);
-            padding: 1rem;
-            border-left: 4px solid var(--accent);
-            margin: 1.5rem 0;
+            background: linear-gradient(120deg, var(--accent) 0%, var(--accent) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+            font-weight: 600;
         }
         
-        .protection-box {
-            background-color: rgba(40, 167, 69, 0.1);
-            padding: 1.5rem;
-            border-left: 4px solid var(--secondary);
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .minimum-sales {
-            background-color: rgba(0, 86, 179, 0.1);
-            padding: 1.5rem;
-            border-left: 4px solid var(--primary);
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .model-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 25px;
+            margin: 30px 0;
         }
         
-        .model-card {
-            background: var(--light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .model-card.featured {
-            border: 2px solid var(--accent);
-            transform: scale(1.05);
-        }
-        
-        .model-card.featured:before {
-            content: "⭐ DESTAQUE";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: var(--dark);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .model-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .model-card.featured:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
-        
-        .model-card h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-        
-        .percentage {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--secondary);
-            margin: 1rem 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .benefits-list {
-            list-style-type: none;
-        }
-        
-        .benefits-list li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        .payment-steps {
+        .feature {
             display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-            position: relative;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
         }
         
-        .payment-step {
-            text-align: center;
-            flex: 1;
-            padding: 1rem;
-            position: relative;
-        }
-        
-        .payment-step:not(:last-child):after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 0;
-            width: 50%;
-            height: 2px;
+        .feature-icon {
             background: var(--primary);
-            z-index: 1;
-        }
-        
-        .step-number {
+            color: white;
             width: 40px;
             height: 40px;
-            background: var(--primary);
-            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
+            flex-shrink: 0;
         }
         
-        footer {
-            background-color: var(--dark);
-            color: white;
+        .commission-structure {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .commission-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .commission-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        
+        .role {
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f0f7ff;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
         }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--secondary);
+            background: var(--primary);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 1rem 0;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
         }
         
         .cta-button:hover {
-            background-color: #218838;
+            background: #0d5bb9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+        }
+        
+        .market-companies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .company-tag {
+            background: #e8f0fe;
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .quote-box {
+            background: #f0f7ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: var(--gray);
+            border-top: 1px solid #eee;
         }
         
         @media (max-width: 768px) {
@@ -267,28 +250,12 @@
                 font-size: 2rem;
             }
             
-            section {
-                padding: 1.5rem;
-            }
-            
-            .model-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .model-card.featured {
-                transform: none;
-            }
-            
-            .model-card.featured:hover {
-                transform: translateY(-5px);
-            }
-            
-            .payment-steps {
+            .commission-structure {
                 flex-direction: column;
             }
             
-            .payment-step:not(:last-child):after {
-                display: none;
+            .grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -296,122 +263,137 @@
 <body>
     <header>
         <div class="container">
-            <!-- Substitua pela logo real da SPDATA -->
-            <div class="logo">SPDATA</div>
-            <h1>Modelo de Comissionamento para Gerentes Comerciais</h1>
-            <p class="subtitle">Proposta competitiva e alinhada com o mercado de software hospitalar</p>
+            <h1>Modelo de Incentivo Comercial 2026</h1>
+            <p class="subtitle">Um modelo de remuneração variável competitivo para Gerentes Comerciais da SPDATA, desenvolvido especificamente para o setor de gestão hospitalar</p>
         </div>
     </header>
     
-    <main class="container">
-        <section id="introducao">
-            <h2>Introdução</h2>
+    <div class="container">
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-bullseye"></i> Introdução</h2>
             <p>Este documento apresenta uma proposta de modelo de remuneração variável competitivo para Gerentes Comerciais da SPDATA, especificamente desenvolvido para o setor de gestão hospitalar.</p>
-            <p>O modelo foi estruturado com base nas práticas de mercado das principais empresas do segmento (MV, Philips, TOTVS, T-Systems, Shift, Pixeon, etc.) e considera as particularidades do ciclo de vendas consultivo do software hospitalar.</p>
+            <p>O modelo foi estruturado com base nas práticas de mercado das principais empresas do segmento:</p>
+            <div class="market-companies">
+                <span class="company-tag">MV</span>
+                <span class="company-tag">Philips</span>
+                <span class="company-tag">TOTVS</span>
+                <span class="company-tag">T-Systems</span>
+                <span class="company-tag">Benner</span>
+                <span class="company-tag">Pixeon</span>
+            </div>
+            <p>E considera as particularidades do ciclo de vendas consultivo do software hospitalar.</p>
         </section>
         
-        <section id="objetivo">
-            <h2>Objetivo</h2>
-            <p>Criar um modelo de remuneração variável competitivo com o mercado de software hospitalar, estimulando alta performance, acelerando conversões e reduzindo churn de vendas complexas.</p>
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-chart-line"></i> Objetivo</h2>
+            <p>Criar um modelo de remuneração variável competitivo com o mercado de software hospitalar, estimulando <span class="highlight">alta performance</span>, acelerando <span class="highlight">conversões</span> e reduzindo <span class="highlight">churn</span> de vendas complexas.</p>
             
-            <div class="highlight">
+            <div class="quote-box">
                 <p><strong>Justificativa:</strong> O setor hospitalar possui ciclo de venda consultivo, elevado número de horas em demonstrações, pré-análise, levantamento de requisitos e tratativas com TI e diretoria. Empresas concorrentes utilizam aceleração de comissão para manter gerentes altamente engajados.</p>
             </div>
         </section>
         
-        <section id="modelo-proposto">
-            <h2>Modelo Proposto (2026)</h2>
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-trophy"></i> Meta Mínima para Pagamento - Regra de Corte</h2>
             
-            <div class="minimum-sales">
-                <h3>🏆 Meta Mínima para Pagamento</h3>
-                <p><strong>R$ 50.000 em vendas por trimestre</strong></p>
-                <p>O pagamento da comissão será realizado apenas após o atingimento desta meta mínima trimestral.</p>
-                <p>Valores abaixo de R$ 50.000 em vendas no trimestre não geram direito a comissão.</p>
-            </div>
-            
-            <div class="model-grid">
-                <div class="model-card">
-                    <h3>Comissão Base</h3>
-                    <div class="percentage">5%</div>
-                    <p>sobre o valor total do contrato fechado até o atingimento da meta trimestral.</p>
-                    <p><strong>Aplica-se apenas após atingir R$ 50.000 em vendas.</strong></p>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-cut"></i></div>
+                <div>
+                    <h3>R$ 50.000 em vendas por trimestre (por gerente)</h3>
+                    <p>O pagamento da comissão será realizado apenas após o atingimento desta meta mínima trimestral.</p>
+                    <p><strong>Valores abaixo de R$ 50.000 em vendas no trimestre não geram direito a comissão.</strong></p>
                 </div>
-                
-                <div class="model-card featured">
-                    <h3>Aceleração</h3>
-                    <div class="percentage">10%</div>
-                    <p>sobre todos os contratos fechados após o atingimento da meta do período.</p>
-                    <p><strong>Impulsiona o gerente a buscar sempre além da meta mínima.</strong></p>
-                </div>
-                
-                <div class="model-card">
-                    <h3>Contratos Enterprise</h3>
-                    <div class="percentage">+2%</div>
-                    <p>adicional para contratos acima de R$ 600 mil.</p>
-                    <p>Reconhecimento pela complexidade de vendas de alto valor.</p>
-                </div>
-            </div>
-            
-            <h3>Bônus por Supermeta</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>% da Meta</th>
-                        <th>Bônus</th>
-                        <th>Justificativa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>110%</td>
-                        <td>0,5× salário</td>
-                        <td>Estimular primeiro teto</td>
-                    </tr>
-                    <tr>
-                        <td>120%</td>
-                        <td>1× salário</td>
-                        <td>Alta performance anual</td>
-                    </tr>
-                    <tr>
-                        <td>140%</td>
-                        <td>1,5× salário</td>
-                        <td>Ultra performance</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>Regra de Pagamento - Parcelado em 3x</h3>
-            <div class="payment-steps">
-                <div class="payment-step">
-                    <div class="step-number">1</div>
-                    <h4>1ª Parcela</h4>
-                    <p>Início do trimestre seguinte</p>
-                    <p>33% do valor da comissão</p>
-                </div>
-                <div class="payment-step">
-                    <div class="step-number">2</div>
-                    <h4>2ª Parcela</h4>
-                    <p>30 dias após</p>
-                    <p>33% do valor da comissão</p>
-                </div>
-                <div class="payment-step">
-                    <div class="step-number">3</div>
-                    <h4>3ª Parcela</h4>
-                    <p>60 dias após</p>
-                    <p>34% do valor da comissão</p>
-                </div>
-            </div>
-            
-            <div class="protection-box">
-                <h4>Proteção contra Cancelamentos</h4>
-                <p><strong>Em caso de cancelamento de contrato após início da implantação:</strong></p>
-                <p>O gerente comercial não será impactado, pois a responsabilidade pela implantação já não está mais sob sua gestão.</p>
-                <p><strong>Exceção:</strong> Cancelamentos decorrentes de falhas na negociação identificadas como responsabilidade do gerente comercial.</p>
             </div>
         </section>
         
-        <section id="beneficios">
-            <h2>Benefícios do Modelo</h2>
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-chart-pie"></i> Estrutura de Comissões</h2>
+            
+            <div class="commission-structure">
+                <div class="commission-card">
+                    <div class="role">Comissão Base</div>
+                    <div class="commission-value">5%</div>
+                    <p>Gerente Comercial</p>
+                    <div class="commission-value">2%</div>
+                    <p>Executiva Comercial</p>
+                    <div class="commission-value">1%</div>
+                    <p>SDR</p>
+                    <p><em>Sobre o valor total do contrato fechado até o atingimento da meta trimestral</em></p>
+                    <p><strong>Aplica-se apenas após atingir R$ 50.000 em vendas.</strong></p>
+                </div>
+                
+                <div class="commission-card">
+                    <div class="role">Aceleração</div>
+                    <div class="commission-value">10%</div>
+                    <p>Gerente Comercial</p>
+                    <div class="commission-value">4%</div>
+                    <p>Executiva Comercial</p>
+                    <div class="commission-value">2%</div>
+                    <p>SDR</p>
+                    <p><em>Sobre todos os contratos fechados após o atingimento da meta do período</em></p>
+                    <p><strong>Impulsiona o gerente a buscar sempre além da meta mínima.</strong></p>
+                </div>
+                
+                <div class="commission-card">
+                    <div class="role">Contratos Enterprise</div>
+                    <div class="commission-value">+2%</div>
+                    <p>Adicional para contratos acima de R$ 600 mil</p>
+                    <p><em>Reconhecimento pela complexidade de vendas de alto valor</em></p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-bullseye"></i> Metas</h2>
+            
+            <div class="grid">
+                <div>
+                    <h3>Metas - Considerar o valor alcançado (não o estimado)</h3>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-arrow-up"></i></div>
+                        <div>
+                            <h4>+8%</h4>
+                            <p>Aumento em relação a 2025, considerando o cenário atual com 1 Executiva Comercial e 1 SDR</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-arrow-up"></i></div>
+                        <div>
+                            <h4>+10%</h4>
+                            <p>Aumento em relação a 2025 considerando o cenário com a contratação de 1 SDR e 1 Estagiária</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Meta Fixa - Eliminar Flutuação</h3>
+                    <p>Estabelecer meta fixa para todos os trimestres (excluindo a flutuação atual: menor no 1° e 4° e maior no 2° e 3°).</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-shield-alt"></i> Regra de Pagamento e Proteção</h2>
+            
+            <div class="grid">
+                <div>
+                    <h3>Pagamento Parcelado</h3>
+                    <p>O pagamento será realizado em <strong>3 parcelas</strong>, permitindo melhor gestão do fluxo de caixa.</p>
+                </div>
+                
+                <div>
+                    <h3>Proteção contra Cancelamentos</h3>
+                    <p>Em caso de cancelamento de contrato após início da implantação:</p>
+                    <p>O gerente comercial, bem como SDR e Executiva Comercial, <strong>não serão impactados</strong>, pois a responsabilidade pela implantação já não está mais vossa gestão.</p>
+                    <p><em>Exceção: Cancelamentos decorrentes de falhas na negociação identificadas como responsabilidade do gerente comercial.</em></p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-star"></i> Benefícios do Modelo</h2>
+            
             <ul class="benefits-list">
                 <li>Aumenta previsibilidade de receita</li>
                 <li>Melhora motivação e foco do time comercial</li>
@@ -426,41 +408,57 @@
             </ul>
         </section>
         
-        <section id="praticas-mercado">
-            <h2>Práticas de Mercado em Software Hospitalar</h2>
-            <p>O modelo proposto está alinhado com as práticas mais comuns no setor de software hospitalar:</p>
+        <section class="card">
+            <h2 class="card-title"><i class="fas fa-industry"></i> Práticas de Mercado em Software Hospitalar</h2>
             
-            <h3>Comissão do Gerente Comercial</h3>
-            <p>3% a 6% sobre contratos até o atingimento da meta mensal/trimestral</p>
-            <p>6% a 12% após o atingimento da meta (aceleração / overachievement)</p>
+            <div class="grid">
+                <div>
+                    <h3>Comissão do Gerente Comercial</h3>
+                    <p>Práticas comuns no setor:</p>
+                    <ul class="benefits-list">
+                        <li>3% a 6% sobre contratos até o atingimento da meta mensal/trimestral</li>
+                        <li>6% a 12% após o atingimento da meta (aceleração / overachievement)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Super Metas</h3>
+                    <p>É padrão oferecer bônus fixo quando o gerente ultrapassa a meta anual/trimestral:</p>
+                    <table class="comparison-table">
+                        <tr>
+                            <td>Supermeta 110%</td>
+                            <td>Bônus de 0,5× salário</td>
+                        </tr>
+                        <tr>
+                            <td>Supermeta 120%</td>
+                            <td>Bônus de 1× salário</td>
+                        </tr>
+                        <tr>
+                            <td>Supermeta 140% ou 150%</td>
+                            <td>Bônus de 1,5× salário</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             
-            <h3>Super Metas</h3>
-            <p>É padrão oferecer bônus fixo quando o gerente ultrapassa a meta anual/trimestral:</p>
-            <ul>
-                <li>Supermeta 110% → bônus de 0,5× salário</li>
-                <li>Supermeta 120% → bônus de 1× salário</li>
-                <li>Supermeta 140% ou 150% → bônus de 1,5× salário</li>
-            </ul>
-            
-            <h3>Tipo de Comissionamento</h3>
-            <p>Comissão % sobre valor do contrato (TVC – total value contract), não sobre MRR como no SaaS puro, devido às vendas hospitalares serem projetos grandes com implantação longa.</p>
-            
+            <div class="quote-box">
+                <p><strong>Tipo de Comissionamento:</strong> Comissão % sobre valor do contrato (TVC - total value contract), não sobre MRR como no SaaS puro, devido às vendas hospitalares serem projetos grandes com implantação longa.</p>
+            </div>
         </section>
         
-        <section id="cta" style="text-align: center;">
-            <h2>Próximos Passos</h2>
+        <section class="card" style="text-align: center;">
+            <h2 class="card-title"><i class="fas fa-handshake"></i> Próximos Passos</h2>
             <p>Esta proposta está disponível para discussão e ajustes conforme necessário.</p>
-            <a href="#" class="cta-button">Agendar Reunião de Discussão</a>
+            <a href="https://alex-2020-pr.github.io/Comissionamento2026/#" class="cta-button">
+                <i class="fas fa-calendar-alt"></i> Agendar Reunião de Discussão
+            </a>
         </section>
-    </main>
+    </div>
     
     <footer>
         <div class="container">
-            <p>SPDATA &copy; 2025 - Proposta de Modelo de Comissionamento</p>
-            <p>Documento interno - Confidencial</p>
+            <p>Modelo de Incentivo Comercial - SPDATA 2026</p>
         </div>
     </footer>
 </body>
 </html>
-
-
